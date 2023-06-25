@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <title>Loan Tracker</title>
+
+    <!-- JS file -->
+    <script src="./script.js"></script>
+</head>
+
+<body>
+
+    <br><br>
+    <h1>Loan Tracker</h1>
+
+    <a href="./expense.html">Expense Tracker</a>
+
+    <br><br>
+
+    <h4>Add loan</h4>
+    <form method="post" action="/loansAdd">
+        <table>
+            <tr>
+                <td>
+                    <input type="text" name="loanName" id="loanName" placeholder="Name">
+                </td>
+                <td>
+                    <input type="text" name="loanDesc" id="loanDesc" placeholder="Description">
+                </td>
+                <td>
+                    <input type="number" name="loanAmount" id="loanAmount" placeholder="Amount">
+                </td>
+                <td>
+                    <select name="loantype" id="loantype">
+                        <option value="given">Given</option>
+                        <option value="taken">Taken</option>
+                    </select>
+                </td>
+                <td>
+                    <!-- <button onclick="loanUpdate()">Add</button> -->
+                    <button id="loan">Add</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <br><br>
+
+    <h4>Loans</h4>
+    <table id="loanTable">
+        <tr>
+            <th>S No</th>
+            <th>Name</th>
+            <th>Desc</th>
+            <th>Amount</th>
+        </tr>
+    </table>
+
+    <br>
+
+    Loan given:
+    <div id="loanGiven">0</div>
+    <br>
+    Loan taken:
+    <div id="loanTaken">0</div>
+
+</body>
+
+</html>

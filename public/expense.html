@@ -1,0 +1,116 @@
+<html>
+
+<head>
+    <title>Expense Tracker</title>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-pie.min.js"></script>
+
+    <!-- JS file -->
+    <script src="../script/script.js"></script>
+
+    <!-- CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="header">
+        <h1>Expense Tracker</h1>
+
+        <a href="./loan.html">Loans</a>
+        <a href="./team.html">Team</a>
+    </div>
+
+    <br><br><br>
+
+    <form action="/expenseCaps" method="post">
+        Initial amount:
+        <input type="number" name="initial_amount" id="initial_amount">
+        <br><br>
+        Monthly cap:
+        <input type="number" name="amount_cap" id="amount_cap">
+
+        <br><br>
+        <!-- <button id="amountSave" onclick="amountSave()">Save</button> -->
+        <button id="amountSave">Save</button>
+    </form>
+
+    <br><br>
+
+    <h4>Add expense</h4>
+    <form method="post" action="/expensesAdd">
+        <table>
+            <tr>
+                <td>
+                    <input type="text" name="notes" id="notes" placeholder="Description">
+                </td>
+                <td>
+                    <select name="category" id="category">
+                        <option value="essentials">essentials</option>
+                        <option value="food">food</option>
+                        <option value="transport">transport</option>
+                        <option value="entertainment">entertainment</option>
+                        <option value="misc">misc</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="number" name="amount" id="amount" placeholder="Amount">
+                </td>
+                <td>
+                    <!-- <button id="expense" onclick="addExpense()">Add</button> -->
+                    <button id="expense">Add</button>
+                </td>
+            </tr>
+            </tr>
+        </table>
+    </form>
+
+    <h4>Expenses</h4>
+    <table id="expenseTable">
+        <tr>
+            <th>S No</th>
+            <th>Desc</th>
+            <th>Category</th>
+            <th>Amount</th>
+        </tr>
+    </table>
+
+    <br>
+
+    Total expense:
+    <div id="total_expense">0</div>
+    <br>
+    Balance:
+    <div id="balance">0</div>
+
+    <br>
+
+    <h4>Category wise expenditure</h4>
+    <table>
+        <tr>
+            <td>Essentials</td>
+            <td id="essentials">0</td>
+        </tr>
+        <tr>
+            <td>Food</td>
+            <td id="food">0</td>
+        </tr>
+        <tr>
+            <td>Transport</td>
+            <td id="transport">0</td>
+        </tr>
+        <tr>
+            <td>Entertainment</td>
+            <td id="entertainment">0</td>
+        </tr>
+        <tr>
+            <td>Misc</td>
+            <td id="misc">0</td>
+        </tr>
+    </table>
+
+    <div id="pie_chart" style="width: 100%; height: 100%"></div>
+
+</body>
+
+</html>
